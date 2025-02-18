@@ -11,7 +11,12 @@ class CounterScreen extends StatefulWidget {
 }
 
 class _CounterScreenState extends State<CounterScreen> {
-  int clickCounter = 0; 
+  int clickCounter = 0;
+  /* String title = 'Clicks'; */
+
+  /* void updateTitle(){
+    title = (clickCounter == 1) ? 'Click' : 'Clicks';
+  } */
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,7 @@ class _CounterScreenState extends State<CounterScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text( '$clickCounter', style: TextStyle( fontSize: 160, fontWeight: FontWeight.w100)),
-            Text('Clicks', style: TextStyle( fontSize: 25 )),
+            Text(/* title */'Click${ clickCounter == 1 ? '': 's'}', style: TextStyle( fontSize: 25 ),),
           ],
         ),
         ),
@@ -31,6 +36,7 @@ class _CounterScreenState extends State<CounterScreen> {
           onPressed: () {
               clickCounter++;
             setState(() {});
+            /* updateTitle(); */
           },
           child: const Icon( Icons.plus_one ),
         ),
