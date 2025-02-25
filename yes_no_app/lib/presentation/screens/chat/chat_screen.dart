@@ -14,7 +14,7 @@ class ChatScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-          padding: const EdgeInsets.all(4.0),
+          padding: const EdgeInsets.all(1),
           child: CircleAvatar(
             // backgroundImage: NetworkImage(url),
           ),
@@ -46,11 +46,12 @@ class _ChatView extends StatelessWidget {
               itemBuilder: (context, index) {
                 final message = chatProvider.messageList[index];
                 return (message.fromWho == FromWho.bot)
-                  ? OtherMessageBubble()
+                  ? OtherMessageBubble( message: message)
                   : MyMessageBubble( message: message);
              })),
 
 
+            
              //caja de texto de mensajes
              MessageFieldBox( 
                 onValue: (value){
@@ -58,7 +59,7 @@ class _ChatView extends StatelessWidget {
                 },
              ),
       
-          
+          SizedBox( height: 5 )
           ],
         ),
       ),
