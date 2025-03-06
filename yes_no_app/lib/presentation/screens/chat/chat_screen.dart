@@ -16,7 +16,7 @@ class ChatScreen extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.all(1),
             child: CircleAvatar(
-            backgroundImage: AssetImage('assets/images/local_image.png'),
+            backgroundImage: AssetImage('assets/images/4233.jpg'),
           ),
         ),
         title: Text('Mi amor 💕'),
