@@ -15,8 +15,8 @@ class ChatScreen extends StatelessWidget {
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.all(1),
-          child: CircleAvatar(
-            // backgroundImage: NetworkImage(url),
+            child: CircleAvatar(
+            backgroundImage: AssetImage('assets/images/local_image.png'),
           ),
         ),
         title: Text('Mi amor 💕'),

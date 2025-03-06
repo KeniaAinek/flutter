@@ -1,0 +1,1 @@
+C:\skills\flutter\yes_no_app\build\app\intermediates\cxx\Debug\6e7291z5\obj\arm64-v8a
