@@ -26,7 +26,7 @@ class MenuItem {
     MenuItem(
       title: 'Tarjetas',
       subTitle: 'Un contenedor estilizado',
-      link: '/cars',
+      link: '/cards',
       icon: Icons.credit_card
     ),
   ];
