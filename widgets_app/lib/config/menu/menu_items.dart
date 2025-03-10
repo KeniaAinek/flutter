@@ -57,4 +57,11 @@ class MenuItem {
       link: '/ui-controls',
       icon: Icons.car_rental_outlined
     ),
+
+    MenuItem(
+      title: 'Introduccion a la aplicación', 
+      subTitle: 'Tutorial de la aplicación', 
+      link: '/tutorial',
+      icon: Icons.accessibility_rounded
+    ),
   ];
