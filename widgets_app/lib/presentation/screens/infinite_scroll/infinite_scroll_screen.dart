@@ -6,6 +6,21 @@ class InfiniteScrollSreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('InfiniteScroll'),
+      ),
+      body: ListView.builder(
+        itemBuilder: (context, index){
+          return FadeInImage(
+            fit: BoxFit.cover,
+            width: double.infinity,
+            height: 300,
+            placeholder: AssetImage('assets/image/jar-loading.gif'), 
+            image: NetworkImage('https://picsum.photos/id/1/500/300')
+            );
+        }
+      ),
+    );
   }
 }
