@@ -80,10 +80,10 @@ class MenuItem {
     ),
 
     MenuItem(
-      title: 'Counter Scren', 
-      subTitle: 'Contador Riverpod', 
-      link: '/counter',
-      icon: Icons.ad_units_sharp
-    ),
+      title: 'Cambiar Tema', 
+      subTitle: 'Cambiar tema de la aplicacion', 
+      link: '/theme-changer',
+      icon: Icons.color_lens_outlined
+    )
 
   ];

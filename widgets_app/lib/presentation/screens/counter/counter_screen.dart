@@ -1,6 +1,6 @@
  import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:widgets_app/presentation/providers/couter_provider.dart';
+import 'package:widgets_app/presentation/providers/counter_provider.dart';
 import 'package:widgets_app/presentation/providers/theme_provider.dart';
  
  class CounterScreen extends ConsumerWidget {
