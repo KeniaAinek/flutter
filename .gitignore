@@ -1,3 +1,6 @@
 toktik/assets/videos/*.mp4
 toktik/assets/videos/
 yes_no_app/assets/images/
+
+#Files types
+.env
