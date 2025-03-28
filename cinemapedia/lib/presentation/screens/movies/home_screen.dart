@@ -32,13 +32,23 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     super.initState();
     ref.read( nowPlayingMoviesProvider.notifier ).loadNextPage();
     ref.read( popularMoviesProvider.notifier ).loadNextPage();
+    ref.read( topRatedMoviesProvider.notifier ).loadNextPage();
+    ref.read( upcomingMoviesProvider.notifier ).loadNextPage();
   }
 
   @override
   Widget build(BuildContext context) {
 
+    final initialLoading = ref.watch(initialLoadingProvider);
+    if( initialLoading ) return const FullScreenLoader();
+
     final nowPlayingMovies = ref.watch( nowPlayingMoviesProvider );
     final moviesSlideShow = ref.watch( moviesSlideshowProvider );
+    final popularMovies = ref.watch( popularMoviesProvider );
+    final topRatedMovies = ref.watch( topRatedMoviesProvider );
+    final upcomingMovies = ref.watch( upcomingMoviesProvider );
+
+    
 
     return CustomScrollView(
       slivers:[
@@ -74,20 +84,29 @@ class _HomeViewState extends ConsumerState<_HomeView> {
           ),
       
           MovieHorizontalListview(
-            movies: nowPlayingMovies,
+            movies: popularMovies,
             title: 'Populares',
             // subTitle: 'Lunes 20',
             loadNextPage: (){
-              ref.read( nowPlayingMoviesProvider.notifier ).loadNextPage();          
+              ref.read( popularMoviesProvider.notifier ).loadNextPage();          
             },
           ),
       
           MovieHorizontalListview(
-            movies: nowPlayingMovies,
+            movies: topRatedMovies,
             title: 'Mejor valoradas',
             subTitle: 'Desde siempre',
             loadNextPage: (){
-              ref.read( nowPlayingMoviesProvider.notifier ).loadNextPage();          
+              ref.read( topRatedMoviesProvider.notifier ).loadNextPage();          
+            },
+          ),
+
+          MovieHorizontalListview(
+            movies: upcomingMovies,
+            title: 'Mejor valoradas',
+            subTitle: 'Desde siempre',
+            loadNextPage: (){
+              ref.read( upcomingMoviesProvider.notifier ).loadNextPage();          
             },
           ),
 
