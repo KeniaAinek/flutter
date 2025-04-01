@@ -41,9 +41,33 @@ class MovieScreenState extends ConsumerState<MovieScreen> {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('MovieID: ${widget.movieId}'),
+      body: CustomScrollView(
+        physics: const ClampingScrollPhysics(),
+        slivers: [
+          _CustomSliverAppBar(
+            movie: movie,
+          ),
+        ],
       ),
+    );
+  }
+}
+
+class _CustomSliverAppBar extends StatelessWidget {
+
+  final Movie movie;
+
+  const _CustomSliverAppBar({
+    required this.movie
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverAppBar(
+      backgroundColor: Colors.black,
+      expandedHeight: MediaQuery.of(context).size.height * 0.7,
+      foregroundColor: Colors.white,
+      title: Text(movie.title),
     );
   }
 }
