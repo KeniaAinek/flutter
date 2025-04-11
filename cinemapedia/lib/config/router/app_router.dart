@@ -26,6 +26,11 @@ final appRouter = GoRouter(
       ],
     ),
 
+    GoRoute(
+      path: '/',
+      redirect: ( _, __ ) => '/home/0',
+    ),
+
     /* ShellRoute(
       builder: (context, state, child) {
         return HomeScreen(childView: child);
