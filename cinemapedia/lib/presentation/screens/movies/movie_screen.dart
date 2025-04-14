@@ -217,16 +217,18 @@ class _CustomSliverAppBar extends ConsumerWidget {
       actions: [
         IconButton(
           onPressed: () async{
+
            await ref.read( favoriteMoviesProvider.notifier )
            .toggleFavorite(movie);
+
             ref.invalidate(isFavoriteProvider(movie.id));
           },
           icon: isFavoriteFuture.when(
+            loading: () => const CircularProgressIndicator(strokeWidth: 2),
             data: (isFavorite) => isFavorite
-            ? const Icon( Icons.favorite_rounded, color: Colors.red )
-            : const Icon( Icons.favorite_border ),
-            error: (_,__) => throw UnimplementedError(), 
-            loading: () => const CircularProgressIndicator(strokeWidth: 2)
+            ? const Icon( Icons.favorite_rounded, color: Colors.red)
+            : const Icon( Icons.favorite_border),
+            error: (_, __) => throw UnimplementedError(),
           ),
         ),
       ],
