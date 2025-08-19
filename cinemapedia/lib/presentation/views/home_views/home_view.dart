@@ -20,6 +20,7 @@ class HomeViewState extends ConsumerState<HomeView> {
     ref.read( popularMoviesProvider.notifier ).loadNextPage();
     ref.read( topRatedMoviesProvider.notifier ).loadNextPage();
     ref.read( upcomingMoviesProvider.notifier ).loadNextPage();
+    
   }
 
   @override
